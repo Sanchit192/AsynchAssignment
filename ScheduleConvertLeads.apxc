@@ -1,0 +1,12 @@
+global class ScheduleConvertLeads implements Schedulable {
+    global void execute(SchedulableContext sc) {
+        ConvertLeadsBatch batchJob = new ConvertLeadsBatch();
+        Database.executeBatch(batchJob);
+    }
+}
+
+//in executable anonymous window 
+
+//String cronExp='0 0 12 * ?';
+// ScheduleConvertLeads scheduler =new ScheduleConvertLeads();
+// System.schedule('MyschedulerJob',cronExp,scheduler);
